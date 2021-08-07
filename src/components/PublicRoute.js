@@ -6,7 +6,7 @@ const PublicRoute = ({ children, ...routeProps }) => {
     const profile = false;
 
     if (profile) {
-        return <Redirect to='/signin' />
+        return <Redirect to='/' />
     }
 
     return (
