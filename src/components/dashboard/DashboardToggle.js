@@ -1,18 +1,19 @@
 import React from 'react'
 import { Button, Drawer, Icon } from 'rsuite'
 import Dashboard from '.';
-import { useModalState } from '../../misc/CustomHooks'
+import { useMediaQuery, useModalState } from '../../misc/CustomHooks'
 
 const DashboardToggle = () => {
 
     const { isOpen, close, open } = useModalState();
+    const isMobile = useMediaQuery('(max-width:992px)');
 
     return (
         <>
             <Button block color="blue" onClick={open}>
                 <Icon icon='dashboard' /> Dashboard
             </Button>
-            <Drawer show={isOpen} onHide={close} placement='left'>
+            <Drawer full={isMobile} show={isOpen} onHide={close} placement='left'>
                 <Dashboard />
             </Drawer>
         </>
