@@ -6,6 +6,7 @@ import { useHover } from '../../../misc/CustomHooks';
 import { auth } from '../../../misc/firebase';
 import ProfileAvatar from '../../dashboard/ProfileAvatar';
 import PresenceDot from '../../PresenceDot';
+import IconBtnControl from './IconBtnControl';
 import ProfileInfoBtnModal from './ProfileInfoBtnModal';
 
 const MessageItem = ({ message, handleAdmin }) => {
@@ -51,6 +52,14 @@ const MessageItem = ({ message, handleAdmin }) => {
                         createdAt
                     }
                     className="font-normal text-black-45 ml-2"
+                />
+                <IconBtnControl
+                    {...(false ? { color: 'red' } : {})}
+                    isVisible
+                    iconName="heart"
+                    tooltip="Like this message"
+                    onClick={() => { }}
+                    badgeContent={5}
                 />
             </div >
 
