@@ -13,9 +13,21 @@ import ProfileInfoBtnModal from './ProfileInfoBtnModal';
 const renderFileMessage = (file) => {
 
     if (file.contentType.includes('image')) {
-        return <div className="height-220">
-            <ImageBtnModal src={file.url} fileName={file.name} />
-        </div>
+        return (
+            <div className="height-220" >
+                <ImageBtnModal src={file.url} fileName={file.name} />
+            </div>
+        );
+    }
+
+    if (file.contentType.includes('audio')) {
+        return (
+            // eslint-disable-next-line jsx-a11y/media-has-caption
+            <audio controls>
+                <source src={file.url} type='audio/mp3' />
+                Your browser does not support audio element.
+            </audio>
+        )
     }
 
 
@@ -87,7 +99,7 @@ const MessageItem = ({ message, handleAdmin, handleLike, handleDelete }) => {
                             isVisible={canShowIcons}
                             iconName="close"
                             tooltip="Delete this message"
-                            onClick={() => handleDelete(message.id)}
+                            onClick={() => handleDelete(message.id, file)}
                         />
                     )
                 }
