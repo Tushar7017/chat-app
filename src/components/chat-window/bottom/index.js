@@ -4,6 +4,7 @@ import firebase from 'firebase/app'
 import { useParams } from 'react-router';
 import { useProfile } from '../../../context/profile.context';
 import { database } from '../../../misc/firebase';
+import AttachmentBtnModal from './AttachmentBtnModal';
 
 function assembleMessages(profile, chatId) {
     return {
@@ -73,7 +74,9 @@ const Bottom = () => {
     return (
         <div>
             <InputGroup>
+                <AttachmentBtnModal />
                 <Input
+                    className="ml-2"
                     placeholder="write a new message here..."
                     value={input}
                     onChange={onInputChange}
