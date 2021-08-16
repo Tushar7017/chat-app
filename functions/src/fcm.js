@@ -43,6 +43,7 @@ exports.sendFcm = functions.https.onCall(async (data, context) => {
     return Promise.all(removePromises).catch(err => err.message);
 });
 
+// eslint-disable-next-line require-jsdoc
 function checkIfAuth(context) {
     if (context.auth) {
         throw new functions.https.HttpsError(
