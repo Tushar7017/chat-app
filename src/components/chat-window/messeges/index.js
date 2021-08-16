@@ -187,7 +187,6 @@ const Messeges = () => {
                     handleDelete={handleDelete}
                 />
             ));
-            console.log(date);
             items.push(...msgs);
         });
 
