@@ -52,9 +52,9 @@ const SendFcmBtnModal = () => {
             setIsLoading(false);
             setFormValue(INITIAL_FORM);
             close();
-            Alert.info('Notification has been send', 7000);
+            Alert.info('Notification has been send', 4000);
         } catch (err) {
-            Alert.error(err.message, 7000)
+            Alert.error(err.message, 4000)
         }
 
     }
